@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: default.xml 51 2010-11-22 01:33:21Z chdemko $ -->
+<metadata>
+  <layout title="COM_BOOTCAMPLEADERBOARDS_TEAMMEMBERS_VIEW_DEFAULT_TITLE">
+    <message>COM_BOOTCAMPLEADERBOARDS_TEAMMEMBERS_VIEW_DEFAULT_DESC</message>
+  </layout>
+  <fields
+      name="request"
+      addfieldpath="/administrator/components/com_bootcampleaderboards/models/fields"
+	>
+    <fieldset name="request">
+      <field addpath="/administrator/components/com_bootcampleaderboards/elements"
+            name="teammemberlisttemplate"
+            type="TeamMemberListTemplate"
+            label="COM_BOOTCAMPLEADERBOARDS_SELECTTEAMMEMBERLISTTEMPLATE_LABEL"
+            description="COM_BOOTCAMPLEADERBOARDS_SELECTTEAMMEMBERLISTTEMPLATE_DESC"
+      >
+        <option value="">JGLOBAL_USE_GLOBAL</option>
+      </field>
+    </fieldset>
+  </fields>
+</metadata>
+
