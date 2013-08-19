@@ -157,12 +157,29 @@ class BootcampleaderboardsModelResult extends JModelForm
 		$db = JFactory::getDBO();
                 //insert the new record into the table
 		$db->insertObject('#__bootcamp_leaderboards_results', $results);
+                
+                class matchresults 
+                {
+                    public $match_id;
+                    public $match_result_screenshot;
+                    public $match_notes;
+                    public $match_issues;
+                    public $match_state;
+                }
+                class comprofilerstuff
+                {
+                    public $user_id;
+                    public $cb_tm_points;
+                    public $cb_lt_points;
+                }
 		
-		if ($db->getErrorMsg()) 
-		{
-			JError::raiseError(500, $db->getErrorMsg());
-			return false;
-		}
+                $matchresults = new matchresults();
+                $matchresults->match_id = $matchInfo['match_id'];
+                $matchresults->match_notes = $data['result_notes'];
+                $matchresults->match_issues = $data['result_issues'];
+                $matchresults->match_result_screenshot = $data['result_screenshot'];
+                $matchresults->match_state = $data['result_matchstate'];
+                
                 //assign the user id to a variable
                 $resultuser  = $userInfo['user_id'];
                 
@@ -181,6 +198,23 @@ class BootcampleaderboardsModelResult extends JModelForm
                 $currentltpts = $db->setQuery($query);
                 //adds current value to the existing value as a new variable
                 $totalltpts = $currentltpts + $data['points'];
+                
+                $comprofilerstuff = new comprofilerstuff();
+                $comprofilerstuff->user_id      = $resultuser;
+                $comprofilerstuff->cb_lt_points = $totalltpts;
+                $comprofilerstuff->cb_tm_points = $totaltmpts;
+                
+                $db->updateObject('#__bootcamp_leaderboards_matches', $matchresults, 'match_id', true);
+                $db->updateObject('#__comprofiler', $comprofilerstuff, 'user_id', false);
+                
+		if ($db->getErrorMsg()) 
+		{
+			JError::raiseError(500, $db->getErrorMsg());
+			return false;
+		}
+                
+                
+                
                 
                 //update the Community Builder Table with the new values
                 $query = "  UPDATE #_comprofiler 

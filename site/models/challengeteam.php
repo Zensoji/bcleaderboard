@@ -58,7 +58,10 @@ class BootcampleaderboardsModelChallengeteam extends JModelForm
 	public function getOpponentList($namepart, $data)
 	{
 		$db = JFactory::getDBO();
-		$query = "SELECT * FROM #__bootcamp_leaderboards_teams WHERE team_published = 1 AND team_name like '%".$namepart."%' AND team_name != '.$data->team_name.' order by team_name";
+                
+                $team_name = $data['team_name'];
+                
+		$query = "SELECT * FROM #__bootcamp_leaderboards_teams WHERE team_published = 1 AND team_name like '%".$namepart."%' AND team_name != '.$team_name.' order by team_name";
 		
 		$db->setQuery($query,0,10); 
 		return $db->loadObjectList();
@@ -85,7 +88,7 @@ class BootcampleaderboardsModelChallengeteam extends JModelForm
 		
 		$challenge =new stdClass();
 		$challenge->match_id = NULL;
-                $challenge->match_name = $data['team_name'].' vs. '.$opponentInfo['team_name'];
+                $challenge->match_name = $teamInfo['team_name'].' vs. '.$opponentInfo['team_name'];
                 $challenge->match_leaderboard_id  = $data['leaderboard_id'];
 		$challenge->match_date = $data['challenge_date'];
 		$challenge->match_state = 2;

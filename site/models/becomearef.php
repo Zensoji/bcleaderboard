@@ -29,7 +29,7 @@ jimport('joomla.application.component.modelform');
 
 require_once JPATH_SITE.DIRECTORY_SEPARATOR.'administrator'.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_bootcampleaderboards'.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'bootcampleaderboardshelper.php';	
 
-class SquadManagementModelBecomearef extends JModelForm
+class BootcampleaderboardsModelBecomearef extends JModelForm
 {
 	protected function populateState()
 	{		

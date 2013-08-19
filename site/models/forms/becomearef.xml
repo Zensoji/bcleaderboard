@@ -1,10 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Become a Referee Form.
+ * becomearef.xml
+ * 
+ *************************************************************************** 
 -->
-
-
-<root>
-    
-</root>
+<form>
+  <fieldset addfieldpath="/administrator/components/com_bootcampleaderboards/models/fields">
+    <field
+			name="referee_id"
+			type="hidden"		
+                />
+    <field
+			name="referee_description"
+			type="editor"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_BECOMEAREF_REFEREE_DESCRIPTION_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_BECOMEAREF_REFEREE_DESCRIPTION_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+                />
+  </fieldset>
+</form>

@@ -1,10 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Challenge a Team Form.
+ * challengeteam.xml
+ * 
+ *************************************************************************** 
 -->
-
-
-<root>
-    
-</root>
+<form>
+  <fieldset addfieldpath="/administrator/components/com_bootcampleaderboards/models/fields">
+    <field
+			name="match_id"
+			type="hidden"		
+                />
+    <field
+			name="challenge_date"
+			type="calendar"
+                        format="%d-%m-%Y %H:%M:%S" 
+                        filter="user_utc"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_MATCH_DATE_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_MATCH_DATE_DESC"
+			size="40"
+			class="inputbox"
+			required="true"		
+                />
+    <field 
+                        name="team_id"
+                        type="hidden"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_TEAMID_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_TEAMID_DESC"
+                />
+    <field
+                        name="leaderboard_id"
+                        type="leaderboard"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_LEADERBOARD_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_LEADERBOARD_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="challenge_description"
+			type="editor"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_DESCRIPTION_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_DESCRIPTION_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+		/>
+    <field
+			name="opponent_id"
+			type="opponent"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CHALLENGETEAM_OPPONENT_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_OPPONENT_OPPONENT_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+		/>
+  </fieldset>
+</form>

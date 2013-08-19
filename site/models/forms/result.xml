@@ -1,10 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Submit a Result Form.
+ * result.xml
+ * 
+ *************************************************************************** 
 -->
-
-
-<root>
-    
-</root>
+<form>
+  <fieldset addfieldpath="/administrator/components/com_bootcampleaderboards/models/fields">
+    <field
+			name="result_id"
+			type="hidden"		
+                /> 
+    <field 
+                        name="leaderboard_id"
+                        type="resultleaderboard"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_LEADERBOARD_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_LEADERBOARD_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+                />
+    <field
+                        name="team_id"
+                        type="resultteam"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_TEAM_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_TEAM_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="team_member_id"
+			type="resultmember"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_TEAM_MEMBER_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_TEAM_MEMBER_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="match_id"
+			type="resultmatch"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_CAREER_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_CAREER_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+		/>
+    <field
+			name="result_notes"
+			type="editor"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_NOTES_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_NOTES_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+		/>
+    <field
+			name="result_matchstate"
+			type="list"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_MATCHSTATE_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_MATCHSTATE_DESC"
+			size="6"
+			class="inputbox"
+			required="true"
+                        default="0"
+		>
+        <option value="0">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_RESULT_MATCHSTATE_MALE
+        </option>
+        <option value="1">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_RESULT_MATCHSTATE_FEMALE
+        </option>
+        <option value="2">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_RESULT_MATCHSTATE_FEMALE
+        </option>
+    </field>
+    <field 
+                        name="result_issues"
+                        type="editor"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_ISSUES_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_ISSUES_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+                />
+    <field 
+                        name="result_screenshot"
+                        type="media"
+                        directory="bootcampleaderboards/results/screenshots"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_SCREENSHOT_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_SCREENSHOT_DESC"
+                        preview="true"
+                />
+    <field 
+                        name="damage"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_DAMAGE_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_DAMAGE_DESC"
+                        class="inputbox"
+                        size="40"
+                        filter="integer"
+                />
+    <field 
+                        name="healing"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_HEALING_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_HEALING_DESC"
+                        class="inputbox"
+                        size="40"
+                        filter="integer"
+                />
+    <field 
+                        name="kills"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_KILLS_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_KILLS_DESC"
+                        class="inputbox"
+                        size="40"
+                        filter="integer"
+                />
+    <field 
+                        name="deaths"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_DEATHS_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_DEATHS_DESC"
+                        class="inputbox"
+                        size="40"
+                        filter="integer"
+                />
+    <field 
+                        name="points"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_POINTS_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_RESULT_POINTS_DESC"
+                        class="inputbox"
+                        size="40"
+                        filter="integer"
+                />
+  </fieldset>
+</form>

@@ -1,10 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Team - Join Form.
+ * jointeam.xml
+ * 
+ *************************************************************************** 
 -->
-
-
-<root>
-    
-</root>
+<form>
+  <fieldset addfieldpath="/administrator/components/com_squadmanagement/models/fields">
+    <field
+			name="team_id"
+			type="hidden"		
+                />
+    <field
+			name="team_name"
+			type="text"
+                        readonly ="true"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_TEAM_NAME_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_TEAM_NAME_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+		/>
+    <field
+			name="team_join_date"
+			type="text"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_JOIN_DATE_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_JOIN_DATE_DESC"
+			size="40"
+                        readonly="true"
+			class="inputbox"
+			required="true"	
+		/>
+    <field
+			name="team_join_description"
+                        type="editor"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_JOIN_DESCRIPTION_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_JOINTEAM_JOIN_DESCRIPTION_LABEL"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+                />
+  </fieldset>
+</form>

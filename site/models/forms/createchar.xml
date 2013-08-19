@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Create a Character Form.
+ * createchar.xml
+ * 
+ *************************************************************************** 
+-->
+<form>
+  <fieldset addfieldpath="/administrator/components/com_bootcampleaderboards/models/fields">
+    <field
+			name="char_id"
+			type="hidden"		
+                />
+    <field
+			name="char_user_id"
+			type="hidden"
+                />
+    <field 
+                        name="char_image"
+                        type="media"
+                        directory="bootcampleaderboards/characters"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CHARIMAGE_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CHARIMAGE_DESC"
+                        preview="true"
+                />
+    <field
+                        name="char_name"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CHARNAME_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CHARNAME_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="char_faction"
+			type="faction"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_DESCRIPTION_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_DESCRIPTION_DESC"
+                        size="40"
+                        class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="char_career"
+			type="career"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CAREER_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_CAREER_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+		/>
+    <field
+			name="char_race"
+			type="race"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_RACE_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_RACE_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+		/>
+    <field
+			name="char_gender"
+			type="list"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_GENDER_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_GENDER_DESC"
+			size="6"
+			class="inputbox"
+			required="true"
+                        default="0"
+		>
+        <option value="0">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_CREATECHAR_GENDER_MALE
+        </option>
+        <option value="1">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_CREATECHAR_GENDER_FEMALE
+        </option>
+    </field>
+    <field 
+                        name="char_role"
+                        type="role"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_ROLE_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_ROLE_DESC"
+                        class="inputbox"
+                        size="40"
+                />
+    <field 
+                        name="char_ship"
+                        type="ship"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_SHIP_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_SHIP_DESC"
+                        class="inputbox"
+                        size="40"
+                />
+    <field 
+                        name="char_ship_name"
+                        type="text"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_SHIPNAME_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_SHIPNAME_DESC"
+                        class="inputbox"
+                        size="40"
+                />
+    <field 
+                        name="char_build"
+                        type="build"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_BUILD_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_BUILD_DESC"
+                        class="inputbox"
+                        size="40"
+                />
+    <field 
+                        name="char_bio"
+                        type="editor"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_BIO_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATECHAR_BIO_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"
+                />
+  </fieldset>
+</form>

@@ -1,10 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ***************************************************************************
+ * 
+ * PvP Boot Camp Leaderboards Component
+ * @comname         com_bootcampleaderboards
+ * @package         Bootcampleaderboards.Site
+ * @subpackage      Views
+ *
+ * @copyright       (C) Copyright 2013 PvP Boot Camp. All rights reserved.
+ * @license         http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link            http://www.pvp-boot-camp.com
+ * @author          Alex Armstrong
+ *                  Lynton Steyn
+ * @author-email    zensoji@pvp-boot-camp.com
+ *                  drkfrontiers@pvp-boot-camp.com
+ * 
+ ***************************************************************************
+ * 
+ * Site's Create a Team Form.
+ * createteam.xml
+ * 
+ *************************************************************************** 
 -->
-
-
-<root>
-    
-</root>
+<form>
+  <fieldset>
+    <field
+			name="team_id"
+			type="hidden"
+		/>
+    <field
+			name="team_name"
+			type="text"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_NAME_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_NAME_DESC"
+			size="40"
+			class="inputbox"
+                        required="true"
+		/>
+    <field
+			name="team_shortname"
+			type="text"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_SHORTNAME_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_SHORTNAME_DESC"
+			size="20"
+			class="inputbox"
+		/>
+    <field
+                        name="team_class"
+                        type="list"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_CLASS_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_CLASS_DESC"
+                        size="20"
+                        class="inputbox"
+                        required="true"
+		>
+        <option value="0">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_CREATETEAM_CLASS_NOVICE
+        </option>
+        <option value="1">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_CREATETEAM_CLASS_ADVANCED
+        </option>
+        <option value="2">
+                        COM_BOOTCAMPLEADERBOARDS_OPTION_CREATETEAM_CLASS_VETERAN
+        </option>
+    </field>
+    <field
+                        name="team_founder"
+                        type="hidden"
+                />
+    <field
+                        name="team_fleet"
+			type="checkbox"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_FLEET_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_FLEET_DESC" 
+                        value="1"
+                        default="0"
+                />
+    <field
+                        name="team_fleet_name"
+			type="text"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_FLEETNAME_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_FLEETNAME_DESC"
+			size="40"
+			class="inputbox"
+                />    
+    <field
+                        name="team_logo"
+			type="media"
+			directory="bootcampleaderboards/teams/logos"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_IMAGE_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_IMAGE_DESC" 
+                        preview="true"
+                />
+    <field
+                        name="team_description"
+                        type="editor"
+                        label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_DESCRIPTION_LABEL"
+                        description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_DESCRIPTION_DESC"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        buttons="true"
+                        hide="readmore,pagebreak"	
+                />    
+    <field
+                        name="team_recruiting"
+			type="checkbox"
+			label="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_RECRUITING_LABEL"
+			description="COM_BOOTCAMPLEADERBOARDS_FIELD_CREATETEAM_RECRUITING_DESC" 
+                        value="1"
+                        default="0"
+                />
+  </fieldset>
+</form>
